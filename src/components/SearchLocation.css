@@ -1,0 +1,27 @@
+div input[type="text"]{
+    width: 700px;
+    height: 30px;
+    font-size: 12pt;
+    padding-left: 8px;
+    outline: none;
+}
+
+div input[type="text"]:focus{
+    outline: none;
+}
+
+input[type="text"]:focus::placeholder{
+    color: transparent;
+  }
+
+div button{
+    width: 70px;
+    height: 35px;
+    font-size: 10pt;
+    background-color: #5cb85c;
+    border: 1px solid #000;
+}
+
+div button:hover{
+    opacity: 0.6;
+}

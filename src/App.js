@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import { connect } from 'react-redux'
 import './App.css';
+import SearchLocation from './components/SearchLocation'
+import ShowData from './components/ShowData'
+import { makeRequest, setNewLocation, updateInitialState } from './redux/actions';
 
-function App() {
-  return (
+function App(props){
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchLocation 
+        weatherData = {props.weatherData} 
+        onMakeRequest = {props.makeRequest}
+        onUpdateInitialState = {props.updateInitialState}
+        onSetNewLocation = {props.setNewLocation}
+      />
+      <ShowData/>
     </div>
-  );
+  )
 }
 
-export default App;
+const mapStateToProps = state =>{
+  return{
+    weatherData: state
+  }
+}
+
+const mapDispatchToProps = dispatch =>{
+  return{
+    makeRequest: () => dispatch(makeRequest()),
+    updateInitialState: (weatherData) => dispatch(updateInitialState(weatherData)),
+    setNewLocation: (weatherData) => dispatch(setNewLocation(weatherData))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
