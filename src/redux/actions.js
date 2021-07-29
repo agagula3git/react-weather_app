@@ -7,18 +7,13 @@ export function makeRequest(){
 }
 
 export function updateInitialState(weatherData){
-    console.log(weatherData.main)
     return {
         type: 'UPDATE_INITIAL_STATE',
-        payload: {
-            
-        }
-
+        payload: weatherData
     }
 }
 
 export function setNewLocation(weatherData){
-    console.log(weatherData.main.temp)
     return {
         type: 'SET_NEW_LOCATION',
         payload: weatherData

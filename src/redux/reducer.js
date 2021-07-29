@@ -33,7 +33,6 @@ export function reducer(state = initialState, action){
                 humidity: payload.main.humidity
             }
         case 'SET_NEW_LOCATION':
-            console.log(payload.main)
             return{
                 loading: false,
                 location: payload.name,

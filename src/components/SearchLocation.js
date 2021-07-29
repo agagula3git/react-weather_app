@@ -17,10 +17,18 @@ export default class SearchLocation extends Component{
             ...this.state, city: value
         });
     }
+    
+    componentDidMount() {
+        axios({
+            method: 'get',
+            url: `https://api.openweathermap.org/data/2.5/weather?q=${this.props.weatherData.location}&appid=${API_KEY}`
+        })
+        .then(res => this.props.onUpdateInitialState(res.data))
+        .catch(err => console.log(err))
+    }
 
     handleSubmit = e =>{
         e.preventDefault();
-        console.log(this.props.weatherData.location);
         axios({
             method: 'get',
             url: `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&appid=${API_KEY}`
@@ -39,7 +47,7 @@ export default class SearchLocation extends Component{
                         onChange = {this.handleChange}
                         placeholder="Search by city name..."
                     />
-                    <button><i class="fa fa-search fa-lg"></i></button>
+                    <button><i className="fa fa-search fa-lg"></i></button>
                 </form>  
             </div>
         )

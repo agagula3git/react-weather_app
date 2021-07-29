@@ -1,0 +1,58 @@
+.data-box{
+    margin-top: 30px;
+    margin-left: 40px;
+    width: 770px;
+}
+
+.main-data #name{
+    font-size: 25pt;
+}
+
+.main-temp {
+    display: flex;
+    flex-direction: row;
+}
+
+.extra-data{
+    margin-top: 50px;
+}
+
+.main-temp span{
+    margin-top: 44px;
+    font-size: 40pt;
+    font-weight: bold;
+    color: #fff;
+}
+
+.main-data p{
+    font-size: 20pt;
+    /*margin-left: 40px;*/
+    color: #fff;
+}
+
+.extra-temp, .extra{
+    display: flex;
+    flex-direction: row;
+}
+
+.extra div{
+    position: relative;
+    margin: -10px 0 0 10px;
+}
+
+.extra div p{
+    font-size: 11pt;
+    color: #055c05;
+}
+
+.extra div span{
+    font-size: 14pt;
+    font-weight: bold;
+    color: #055c05;
+}
+
+.extra-visibility{
+    margin-left: 180px;
+}
+
+

@@ -6,6 +6,9 @@ div input[type="text"]{
     outline: none;
 }
 
+form{
+    margin-left: 40px;
+}
 div input[type="text"]:focus{
     outline: none;
 }

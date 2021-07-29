@@ -13,7 +13,9 @@ function App(props){
         onUpdateInitialState = {props.updateInitialState}
         onSetNewLocation = {props.setNewLocation}
       />
-      <ShowData/>
+      <ShowData
+        weatherData = {props.weatherData}
+      />
     </div>
   )
 }
